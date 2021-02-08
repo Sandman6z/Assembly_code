@@ -1,0 +1,79 @@
+A51 MACRO ASSEMBLER  CLOCK                                                                12/09/2018 13:09:57 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\clock.obj
+ASSEMBLER INVOKED BY: D:\Keil_v5\C51\BIN\A51.EXE clock.asm SET(SMALL) DEBUG PRINT(.\Listings\clock.lst) OBJECT(.\Objects
+                      \clock.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1                     ORG 0000H
+0000 010D              2                     AJMP MAIN
+000B                   3                     ORG 000BH
+000B 0128              4                     AJMP ITOP
+000D 758901            5     MAIN:   MOV TMOD,#01H
+0010 75200A            6                     MOV 20H,#0AH
+0013 E4                7                     CLR A
+0014 F540              8                     MOV 40H,A
+0016 F541              9                     MOV 41H,A
+0018 F542             10                     MOV 42H,A
+001A D2A9             11                     SETB ET0
+001C D2AF             12                     SETB EA
+001E 758C3C           13                     MOV TH0,#3CH
+0021 758AB0           14                     MOV TL0,#0B0H
+0024 D28C             15                     SETB TR0
+0026 80FE             16                     SJMP $
+0028 C0D0             17     ITOP:   PUSH PSW
+002A C0E0             18                     PUSH ACC
+002C 758C3C           19                     MOV TH0,#3CH
+002F 758AB0           20                     MOV TL0,#0B0H
+0032 D5202A           21                     DJNZ 20H,RETURN
+0035 75200A           22                     MOV 20H,#0AH
+0038 7401             23                     MOV A,#01H
+003A 2542             24                     ADD A,42H
+003C D4               25                     DA A
+003D F542             26                     MOV 42H,A
+003F B4601D           27                     CJNE A,#60H,RETURN
+0042 754200           28                     MOV 42H,#00H
+0045 7401             29                     MOV A,#01H
+0047 2541             30                     ADD A,41H
+0049 D4               31                     DA A
+004A F541             32                     MOV 41H,A
+004C B43C10           33                     CJNE A,#60,RETURN
+004F 754100           34                     MOV 41H,#00H
+0052 7401             35                     MOV A,#01H
+0054 2540             36                     ADD A,40H
+0056 D4               37                     DA A
+0057 F540             38                     MOV 40H,A
+0059 B41803           39                     CJNE A,#24,RETURN
+005C 754000           40                     MOV 40H,#00H
+005F D0E0             41     RETURN: POP ACC
+0061 D0D0             42                     POP PSW
+0063 32               43                     RETI
+                      44                     END
+A51 MACRO ASSEMBLER  CLOCK                                                                12/09/2018 13:09:57 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+ACC. . . . . . . .  D ADDR   00E0H   A   
+EA . . . . . . . .  B ADDR   00A8H.7 A   
+ET0. . . . . . . .  B ADDR   00A8H.1 A   
+ITOP . . . . . . .  C ADDR   0028H   A   
+MAIN . . . . . . .  C ADDR   000DH   A   
+PSW. . . . . . . .  D ADDR   00D0H   A   
+RETURN . . . . . .  C ADDR   005FH   A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

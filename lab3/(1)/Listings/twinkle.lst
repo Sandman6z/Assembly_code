@@ -1,0 +1,59 @@
+A51 MACRO ASSEMBLER  TWINKLE                                                              11/11/2018 12:14:37 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\twinkle.obj
+ASSEMBLER INVOKED BY: D:\Keil_v5\C51\BIN\A51.EXE twinkle.ASM SET(SMALL) DEBUG PRINT(.\Listings\twinkle.lst) OBJECT(.\Obj
+                      ects\twinkle.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ;用定时器1的方式1定时，P1.0接一发光二极管，使该发光二极管每秒钟闪烁5次（采用中断方式）。
+0000                   2             ORG 0000H
+0000 020100            3             LJMP MAIN 
+001B                   4             ORG 001BH
+001B 020116            5             LJMP INT
+0100                   6             ORG 0100H
+0100 C290              7     MAIN:CLR P1.0
+0102 75F002            8             MOV B,#02H
+0105 758910            9             MOV TMOD,#10H
+0108 758D3C           10             MOV TH1,#3CH
+010B 758BB0           11             MOV TL1,#0B0H
+010E D28E             12             SETB TR1        ;??T1
+0110 D2AB             13             SETB ET1        ;?T1??
+0112 D2AF             14             SETB EA 
+0114 80FE             15             SJMP $
+                      16                     
+0116 758D3C           17     INT:MOV TH1,#3CH
+0119 758BB0           18             MOV TL1,#0B0H
+011C D5F005           19             DJNZ B,LOOP
+011F B290             20             CPL P1.0
+0121 75F002           21             MOV B,#02H
+0124 32               22     LOOP:RETI
+                      23     
+                      24     END
+A51 MACRO ASSEMBLER  TWINKLE                                                              11/11/2018 12:14:37 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+EA . . . . . . . .  B ADDR   00A8H.7 A   
+ET1. . . . . . . .  B ADDR   00A8H.3 A   
+INT. . . . . . . .  C ADDR   0116H   A   
+LOOP . . . . . . .  C ADDR   0124H   A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+TH1. . . . . . . .  D ADDR   008DH   A   
+TL1. . . . . . . .  D ADDR   008BH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR1. . . . . . . .  B ADDR   0088H.6 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

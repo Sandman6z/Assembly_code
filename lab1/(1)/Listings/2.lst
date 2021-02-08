@@ -1,0 +1,45 @@
+A51 MACRO ASSEMBLER  2                                                                    10/28/2018 10:44:29 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\2.obj
+ASSEMBLER INVOKED BY: D:\Keil_v5\C51\BIN\A51.EXE 2.asm SET(SMALL) DEBUG PRINT(.\Listings\2.lst) OBJECT(.\Objects\2.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1              ORG 0000H
+0000 2100              2              AJMP MAIN
+0100                   3              ORG 0100H
+0100 7840              4     MAIN:MOV R0,#40H
+0102 7400              5              MOV A,#00H
+0104 7A0F              6              MOV R2,#0FH
+0106 F6                7      IN1:MOV @R0,A
+0107 08                8              INC R0
+0108 04                9              INC A
+0109 DAFB             10              DJNZ R2,IN1
+                      11              
+010B 901050           12              MOV DPTR,#1050H
+010E 7840             13              MOV R0,#40H
+0110 E6               14      IN2:MOV A,@R0
+0111 F0               15              MOVX @DPTR,A
+0112 08               16              INC R0
+0113 A3               17              INC DPTR
+0114 DAFA             18              DJNZ R2,IN2
+                      19              END
+A51 MACRO ASSEMBLER  2                                                                    10/28/2018 10:44:29 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+IN1. . . . . . . .  C ADDR   0106H   A   
+IN2. . . . . . . .  C ADDR   0110H   A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

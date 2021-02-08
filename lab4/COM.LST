@@ -1,0 +1,70 @@
+A51 MACRO ASSEMBLER  COM                                                                  11/25/2018 16:15:39 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.01
+OBJECT MODULE PLACED IN COM.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE COM.ASM SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1                     ORG 0000H
+0000 020100            2                     LJMP MAIN
+0100                   3                     ORG 0100H
+0100 759850            4     MAIN:   MOV SCON,#50H
+0103 758700            5                     MOV PCON,#00H    
+0106 758920            6                     MOV TMOD,#20H
+0109 758DF3            7                     MOV TH1,#0F3H
+010C 758BF3            8                     MOV TL1,#0F3H
+010F D28E              9                     SETB TR1
+0111 7830             10     LOOP:   MOV R0,#30H        ;RAM
+0113 7E08             11                     MOV R6,#8          ;bit
+                      12     
+0115 109802           13     COM:    JBC RI,SEND1
+0118 80FB             14                     SJMP COM
+                      15     
+011A E599             16     SEND1:  MOV A,SBUF
+011C F6               17                     MOV @R0,A
+011D 08               18                     INC R0
+011E DEF5             19                     DJNZ R6,COM
+0120 759955           20                     MOV SBUF,#55H
+                      21     
+0123 109902           22     WAIT1:  JBC TI,SEND2
+0126 80FB             23                     SJMP WAIT1
+                      24     
+0128 7599AA           25     SEND2:  MOV SBUF,#0AAH
+                      26     
+012B 3099FD           27     RECE:   JNB TI,RECE
+012E C299             28                     CLR TI
+                      29                     
+0130 80DF             30                     SJMP LOOP
+                      31     END
+A51 MACRO ASSEMBLER  COM                                                                  11/25/2018 16:15:39 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+COM. . . . . . . .  C ADDR   0115H   A   
+LOOP . . . . . . .  C ADDR   0111H   A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+PCON . . . . . . .  D ADDR   0087H   A   
+RECE . . . . . . .  C ADDR   012BH   A   
+RI . . . . . . . .  B ADDR   0098H.0 A   
+SBUF . . . . . . .  D ADDR   0099H   A   
+SCON . . . . . . .  D ADDR   0098H   A   
+SEND1. . . . . . .  C ADDR   011AH   A   
+SEND2. . . . . . .  C ADDR   0128H   A   
+TH1. . . . . . . .  D ADDR   008DH   A   
+TI . . . . . . . .  B ADDR   0098H.1 A   
+TL1. . . . . . . .  D ADDR   008BH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR1. . . . . . . .  B ADDR   0088H.6 A   
+WAIT1. . . . . . .  C ADDR   0123H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

@@ -1,0 +1,3 @@
+".\Objects\twinkle.obj" 
+TO ".\Objects\twinkle_5" 
+PRINT(".\Listings\twinkle_5.m51") RAMSIZE(256) 

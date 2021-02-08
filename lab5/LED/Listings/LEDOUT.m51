@@ -1,0 +1,97 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    12/02/2018  11:41:08  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+D:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\LEDOUT.obj TO .\Objects\LEDOUT PRINT (.\Listings\LEDOUT.m51) RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\LEDOUT.obj (LEDOUT)
+
+
+LINK MAP OF MODULE:  .\Objects\LEDOUT (LEDOUT)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0165H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\LEDOUT (LEDOUT)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        LEDOUT
+  C:010DH         SYMBOL        BCD
+  C:013FH         SYMBOL        CTAB
+  C:014EH         SYMBOL        DL
+  C:014CH         SYMBOL        DL1MS
+  C:0150H         SYMBOL        DL6
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  C:0100H         SYMBOL        MAIN
+  C:0155H         SYMBOL        TAB
+  C:0000H         LINE#         2
+  C:0100H         LINE#         4
+  C:0103H         LINE#         5
+  C:0106H         LINE#         6
+  C:0109H         LINE#         7
+  C:010BH         LINE#         8
+  C:010DH         LINE#         10
+  C:010EH         LINE#         11
+  C:010FH         LINE#         12
+  C:0111H         LINE#         13
+  C:0113H         LINE#         14
+  C:0114H         LINE#         16
+  C:0115H         LINE#         17
+  C:0117H         LINE#         18
+  C:0119H         LINE#         19
+  C:011AH         LINE#         21
+  C:011DH         LINE#         22
+  C:011EH         LINE#         23
+  C:011FH         LINE#         24
+  C:0122H         LINE#         25
+  C:0123H         LINE#         26
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  12/02/2018  11:41:08  PAGE 2
+
+
+  C:0124H         LINE#         27
+  C:0125H         LINE#         28
+  C:0126H         LINE#         29
+  C:0127H         LINE#         30
+  C:0129H         LINE#         32
+  C:012CH         LINE#         33
+  C:012DH         LINE#         34
+  C:012EH         LINE#         35
+  C:0131H         LINE#         36
+  C:0132H         LINE#         37
+  C:0133H         LINE#         38
+  C:0134H         LINE#         39
+  C:0135H         LINE#         40
+  C:0136H         LINE#         41
+  C:0138H         LINE#         43
+  C:0139H         LINE#         44
+  C:013CH         LINE#         45
+  C:013FH         LINE#         47
+  C:0141H         LINE#         48
+  C:0143H         LINE#         49
+  C:0146H         LINE#         50
+  C:0147H         LINE#         51
+  C:0149H         LINE#         52
+  C:014BH         LINE#         53
+  C:014CH         LINE#         55
+  C:014EH         LINE#         56
+  C:0150H         LINE#         57
+  C:0152H         LINE#         58
+  C:0154H         LINE#         59
+  -------         ENDMOD        LEDOUT
+
+Program Size: data=8.0 xdata=0 code=357
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

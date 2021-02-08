@@ -1,0 +1,3 @@
+".\Objects\LEDOUT.obj" 
+TO ".\Objects\LEDOUT" 
+PRINT(".\Listings\LEDOUT.m51") RAMSIZE(256) 

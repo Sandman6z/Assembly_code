@@ -1,0 +1,53 @@
+A51 MACRO ASSEMBLER  INTERRUPT                                                            11/11/2018 13:04:23 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\interrupt.obj
+ASSEMBLER INVOKED BY: D:\Keil_v5\C51\BIN\A51.EXE interrupt.ASM SET(SMALL) DEBUG PRINT(.\Listings\interrupt.lst) OBJECT(.
+                      \Objects\interrupt.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ;ÓÃ¶¨Ê±Æ÷1µÄ·½Ê½2¼ÆÊ£¬T1Ò½Å½Óµ¥Âö³å£¬ÓÃP1¿Ú½Ó·¢¹â¶þ¼«¹ÜÏÔÊ¾¼ÆÊÖµ¡£
+0000                   2             ORG 0000H
+0000 2100              3             AJMP MAIN
+001B                   4         ORG 001BH
+001B 020115            5             LJMP CON
+0100                   6             ORG 0100H
+0100 7400              7     MAIN:MOV A,#00H
+0102 F590              8             MOV P1,A
+0104 758960            9             MOV TMOD,#60H
+0107 758DFF           10             MOV TH1,#0FFH
+010A 758BFF           11             MOV TL1,#0FFH
+010D D28E             12             SETB TR1
+010F D2AB             13             SETB ET1
+0111 D2AF             14             SETB EA
+0113 80FE             15             SJMP $
+0115 04               16     CON:INC A
+0116 F590             17             MOV P1,A
+0118 32               18             RETI
+                      19     
+                      20     END     
+A51 MACRO ASSEMBLER  INTERRUPT                                                            11/11/2018 13:04:23 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+CON. . . . . . . .  C ADDR   0115H   A   
+EA . . . . . . . .  B ADDR   00A8H.7 A   
+ET1. . . . . . . .  B ADDR   00A8H.3 A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+TH1. . . . . . . .  D ADDR   008DH   A   
+TL1. . . . . . . .  D ADDR   008BH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR1. . . . . . . .  B ADDR   0088H.6 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

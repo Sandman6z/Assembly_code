@@ -1,0 +1,12 @@
+;用定时器1的方式2计数，T1引脚接单脉冲，用P1口接发光二极管显示计数值。
+	ORG 0000H
+	AJMP MAIN
+	ORG 0100H
+MAIN:MOV A,#00H
+	MOV TMOD,#60H
+	;MOV TH1,#00H
+	;MOV TL1,#00H
+	SETB TR1
+LOOP:MOV A,TL1
+	MOV P1,A
+	END	

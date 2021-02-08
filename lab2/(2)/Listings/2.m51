@@ -1,0 +1,52 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    11/04/2018  11:11:33  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+D:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\interrupt_light.obj TO .\Objects\2 PRINT (.\Listings\2.m51) RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\interrupt_light.obj (INTERRUPT_LIGHT)
+
+
+LINK MAP OF MODULE:  .\Objects\2 (INTERRUPT_LIGHT)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0110H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\2 (INTERRUPT_LIGHT)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        INTERRUPT_LIGHT
+  B:00A8H.7       SYMBOL        EA
+  B:00A8H.0       SYMBOL        EX0
+  C:010CH         SYMBOL        INT
+  B:0088H.0       SYMBOL        IT0
+  C:0100H         SYMBOL        MAIN
+  D:0090H         SYMBOL        P1
+  C:0000H         LINE#         2
+  C:0003H         LINE#         4
+  C:0100H         LINE#         7
+  C:0102H         LINE#         8
+  C:0104H         LINE#         9
+  C:0106H         LINE#         10
+  C:0108H         LINE#         11
+  C:010AH         LINE#         12
+  C:010CH         LINE#         14
+  C:010DH         LINE#         15
+  C:010FH         LINE#         16
+  -------         ENDMOD        INTERRUPT_LIGHT
+
+Program Size: data=8.0 xdata=0 code=272
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

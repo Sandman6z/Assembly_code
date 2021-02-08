@@ -1,0 +1,132 @@
+A51 MACRO ASSEMBLER  KEYBOARD                                                             11/25/2018 12:16:08 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\KEYBOARD.obj
+ASSEMBLER INVOKED BY: D:\Keil_v5\C51\BIN\A51.EXE KEYBOARD.ASM SET(SMALL) DEBUG PRINT(.\Listings\KEYBOARD.lst) OBJECT(.\O
+                      bjects\KEYBOARD.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1             ORG 0000H
+0000 021000            2             LJMP START
+1000                   3             ORG 1000H
+                       4             
+1000 1104              5     START:  ACALL KEY1
+1002 0100              6             AJMP START
+                       7             
+1004 1154              8     KEY1:   ACALL KEY14
+1006 7004              9             JNZ KEY3
+1008 1167             10     KEY2:   ACALL KEY16
+100A 0104             11             AJMP KEY1
+100C 1167             12     KEY3:   ACALL KEY16
+100E 1175             13             ACALL DELAY
+1010 1154             14             ACALL KEY14
+1012 7004             15             JNZ KEY4
+1014 1167             16             ACALL KEY16
+1016 0104             17             AJMP KEY1
+1018 7AFE             18     KEY4:   MOV R2,#0FEH
+101A 7C00             19             MOV R4,#00H
+101C 908002           20     KEY5:   MOV DPTR,#8002H
+101F EA               21             MOV A,R2
+1020 F0               22             MOVX @DPTR,A
+1021 908001           23             MOV DPTR,#8001H
+1024 E0               24             MOVX A,@DPTR
+1025 20E004           25             JB ACC.0,KEY6
+1028 7400             26             MOV A,#00H
+102A 013F             27             AJMP KEY9
+102C 20E104           28     KEY6:   JB ACC.1,KEY7
+102F 7406             29             MOV A,#06H
+1031 013F             30             AJMP KEY9
+1033 20E204           31     KEY7:   JB ACC.2,KEY8
+1036 740C             32             MOV A,#0CH
+1038 013F             33             AJMP KEY9
+103A 20E30C           34     KEY8:   JB ACC.3,KEY12
+103D 7412             35             MOV A,#12H
+103F 2C               36     KEY9:   ADD A,R4
+1040 FD               37     KEY10:  MOV R5,A
+1041 1154             38     KEY11:  ACALL KEY14
+1043 70FC             39             JNZ KEY11
+1045 ED               40             MOV A,R5
+1046 1162             41             ACALL KEY15
+1048 22               42             RET
+1049 0C               43     KEY12:  INC R4
+104A EA               44             MOV A,R2
+104B 30E504           45             JNB ACC.5,KEY13
+104E 23               46             RL A
+104F FA               47             MOV R2,A
+1050 011C             48             AJMP KEY5
+1052 0104             49     KEY13:  AJMP KEY1
+1054 908002           50     KEY14:  MOV DPTR,#8002H
+1057 7400             51             MOV A,#00H
+1059 F0               52             MOVX @DPTR,A
+105A 908001           53             MOV DPTR,#8001H
+105D E0               54             MOVX A,@DPTR
+105E F4               55             CPL A
+105F 540F             56             ANL A,#0FH
+1061 22               57             RET
+A51 MACRO ASSEMBLER  KEYBOARD                                                             11/25/2018 12:16:08 PAGE     2
+
+1062 90107E           58     KEY15:  MOV DPTR,#TABLE
+1065 93               59             MOVC A,@A+DPTR
+1066 FB               60             MOV R3,A
+1067 908002           61     KEY16:  MOV DPTR,#8002H
+106A 7401             62             MOV A,#01H
+106C F0               63             MOVX @DPTR,A
+106D 908004           64             MOV DPTR,#8004H
+1070 EB               65             MOV A,R3
+1071 F0               66             MOVX @DPTR,A
+1072 1175             67             ACALL DELAY
+1074 22               68             RET
+                      69             
+1075 7F0C             70     DELAY:  MOV R7,#12
+                      71     
+1077 7EFA             72     LOOP:   MOV R6,#250
+1079 DEFE             73             DJNZ R6,$
+107B DFFA             74             DJNZ R7,LOOP
+107D 22               75             RET
+                      76             
+107E 7E7E5E79         77     TABLE:  DB 7EH,7EH,5EH,79H,71H,3FH,7EH,7EH,39H,4FH,5BH,06H,7EH,7EH,7CH,7DH,6DH,66H,7EH,7EH,
+                             77H,6FH,7FH,07H
+1082 713F7E7E                
+1086 394F5B06                
+108A 7E7E7C7D                
+108E 6D667E7E                
+1092 776F7F07                
+                      78     
+                      79     END
+A51 MACRO ASSEMBLER  KEYBOARD                                                             11/25/2018 12:16:08 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+ACC. . . . . . . .  D ADDR   00E0H   A   
+DELAY. . . . . . .  C ADDR   1075H   A   
+KEY1 . . . . . . .  C ADDR   1004H   A   
+KEY10. . . . . . .  C ADDR   1040H   A   
+KEY11. . . . . . .  C ADDR   1041H   A   
+KEY12. . . . . . .  C ADDR   1049H   A   
+KEY13. . . . . . .  C ADDR   1052H   A   
+KEY14. . . . . . .  C ADDR   1054H   A   
+KEY15. . . . . . .  C ADDR   1062H   A   
+KEY16. . . . . . .  C ADDR   1067H   A   
+KEY2 . . . . . . .  C ADDR   1008H   A   
+KEY3 . . . . . . .  C ADDR   100CH   A   
+KEY4 . . . . . . .  C ADDR   1018H   A   
+KEY5 . . . . . . .  C ADDR   101CH   A   
+KEY6 . . . . . . .  C ADDR   102CH   A   
+KEY7 . . . . . . .  C ADDR   1033H   A   
+KEY8 . . . . . . .  C ADDR   103AH   A   
+KEY9 . . . . . . .  C ADDR   103FH   A   
+LOOP . . . . . . .  C ADDR   1077H   A   
+START. . . . . . .  C ADDR   1000H   A   
+TABLE. . . . . . .  C ADDR   107EH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

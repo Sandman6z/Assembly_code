@@ -1,0 +1,48 @@
+BL51 BANKED LINKER/LOCATER V6.20                                                        12/02/2018  16:11:30  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.20, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE DA.obj TO DA RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  DA.obj (DA)
+
+
+LINK MAP OF MODULE:  DA (DA)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0114H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  DA (DA)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        DA
+  C:0100H         SYMBOL        MAIN
+  D:0090H         SYMBOL        P1
+  C:0000H         LINE#         2
+  C:0100H         LINE#         5
+  C:0102H         LINE#         6
+  C:0105H         LINE#         7
+  C:0106H         LINE#         9
+  C:0109H         LINE#         10
+  C:010AH         LINE#         11
+  C:010CH         LINE#         12
+  C:010EH         LINE#         14
+  C:010FH         LINE#         15
+  C:0111H         LINE#         16
+  -------         ENDMOD        DA
+
+Program Size: data=8.0 xdata=0 code=276
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

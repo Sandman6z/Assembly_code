@@ -1,0 +1,72 @@
+A51 MACRO ASSEMBLER  COM                                                                  11/25/2018 12:40:56 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+NO OBJECT MODULE REQUESTED
+ASSEMBLER INVOKED BY: D:\Keil_v5\C51\BIN\A51.EXE COM.ASM SET(SMALL) DEBUG PRINT(.\Listings\COM.lst) OBJECT(.\Objects\COM
+                      .obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1                     ORG 0000H
+0000 020100            2                     LJMP MAIN
+0100                   3                     ORG 0100H
+0100 759850            4     MAIN:   MOV SCON,#50H
+0103 758700            5                     MOV PCON,#00H   ;SMOD=0
+0106 758920            6                     MOV TMOD,#20H
+0109 758DF3            7                     MOV TH1,#0F3H
+010C 758BF3            8                     MOV TL1,#0F3H
+010F D28E              9                     SETB TR1
+0111 7F50             10                     MOV R7,#50H
+0113 7E08             11                     MOV R6,#8
+                      12     
+0115 3098FD           13     COM:    JNB RI,COM
+0118 C298             14                     CLR RI
+011A E599             15                     MOV A,SBUF
+011C F6               16                     MOV @R0,A
+011D 0F               17                     INC R7
+011E DEF5             18                     DJNZ R6,COM
+0120 759955           19                     MOV SBUF,#55H
+                      20     
+0123 309900           21     TXD:    JNB TI,TXD
+*** _________________________^
+*** ________________________________________^
+*** ERROR #A8 IN 21 (COM.ASM, LINE 21): ATTEMPT TO DEFINE AN ALREADY DEFINED LABEL
+*** ERROR #A46 IN 21 (COM.ASM, LINE 21): CODE-ADDRESS EXPECTED
+0126 C299             22                     CLR TI
+0128 7599AA           23                     MOV SBUF,#0AAH
+012B 309900           24     RXD:    JNB TI,RXD
+*** _________________________^
+*** ________________________________________^
+*** ERROR #A8 IN 24 (COM.ASM, LINE 24): ATTEMPT TO DEFINE AN ALREADY DEFINED LABEL
+*** ERROR #A46 IN 24 (COM.ASM, LINE 24): CODE-ADDRESS EXPECTED
+012E C299             25                     CLR TI
+0130 80CE             26                     SJMP MAIN
+                      27     END
+A51 MACRO ASSEMBLER  COM                                                                  11/25/2018 12:40:56 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+COM. . . . . . . .  C ADDR   0115H   A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+PCON . . . . . . .  D ADDR   0087H   A   
+RI . . . . . . . .  B ADDR   0098H.0 A   
+RXD. . . . . . . .  B ADDR   00B0H.0 A   
+SBUF . . . . . . .  D ADDR   0099H   A   
+SCON . . . . . . .  D ADDR   0098H   A   
+TH1. . . . . . . .  D ADDR   008DH   A   
+TI . . . . . . . .  B ADDR   0098H.1 A   
+TL1. . . . . . . .  D ADDR   008BH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR1. . . . . . . .  B ADDR   0088H.6 A   
+TXD. . . . . . . .  B ADDR   00B0H.1 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 4 ERROR(S)

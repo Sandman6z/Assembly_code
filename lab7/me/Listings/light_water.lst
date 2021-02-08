@@ -1,0 +1,51 @@
+A51 MACRO ASSEMBLER  LIGHT_WATER                                                          12/09/2018 13:09:06 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\light_water.obj
+ASSEMBLER INVOKED BY: D:\Keil_v5\C51\BIN\A51.EXE ..\..\light_water.ASM SET(SMALL) DEBUG PRINT(.\Listings\light_water.lst
+                      ) OBJECT(.\Objects\light_water.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1                 ORG 0000H
+0000 2100              2                 AJMP MAIN
+0100                   3                 ORG 0100H
+0100 7401              4            MAIN:MOV A,#01H
+0102 F5A0              5            SUB1:MOV P2,A
+0104 310E              6                 ACALL DEL
+0106 75A000            7                 MOV P2,#00H
+0109 310E              8                 ACALL DEL
+010B 23                9                 RL A
+010C 2102             10                 AJMP SUB1
+                      11     
+010E 7A00             12             DEL:MOV R2,#256
+*** _____________________________________________^
+*** WARNING #A52 IN 12 (..\..\light_water.ASM, LINE 12): VALUE HAS BEEN TRUNCATED TO 8 BITS
+0110 7B80             13            DEL1:MOV R3,#128
+0112 7C80             14                 MOV R4,#128
+0114 DCFE             15                             DJNZ R4,$
+0116 DBFE             16            DEL2:DJNZ R3,DEL2
+0118 DAF6             17                 DJNZ R2,DEL1
+011A 22               18                 RET
+                      19     END
+A51 MACRO ASSEMBLER  LIGHT_WATER                                                          12/09/2018 13:09:06 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DEL. . . . . . . .  C ADDR   010EH   A   
+DEL1 . . . . . . .  C ADDR   0110H   A   
+DEL2 . . . . . . .  C ADDR   0116H   A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+SUB1 . . . . . . .  C ADDR   0102H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  1 WARNING(S), 0 ERROR(S)

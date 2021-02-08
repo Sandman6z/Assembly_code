@@ -1,0 +1,99 @@
+A51 MACRO ASSEMBLER  LEDOUT                                                               12/02/2018 11:41:08 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\LEDOUT.obj
+ASSEMBLER INVOKED BY: D:\Keil_v5\C51\BIN\A51.EXE LEDOUT.ASM SET(SMALL) DEBUG PRINT(.\Listings\LEDOUT.lst) OBJECT(.\Objec
+                      ts\LEDOUT.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1                     ORG 0000H
+0000 2100              2                     AJMP MAIN
+0100                   3                     ORG 0100H
+0100 753030            4     MAIN:   MOV 30H,#30H
+0103 753131            5                     MOV 31H,#31H
+0106 753232            6                     MOV 32H,#32H
+0109 7830              7                     MOV R0,#30H     ;address pointer
+010B 7F20              8                     MOV R7,#20H     ;byte count
+                       9                     
+010D E6               10     BCD:    MOV A,@R0
+010E C4               11                     SWAP A
+010F 540F             12                     ANL A,#0FH
+0111 313F             13                     ACALL CTAB
+0113 FA               14                     MOV R2,A
+                      15                     
+0114 E6               16                     MOV A,@R0
+0115 540F             17                     ANL A,#0FH
+0117 313F             18                     ACALL CTAB
+0119 FB               19                     MOV R3,A
+                      20     
+011A 908002           21                     MOV DPTR,#8002H
+011D EF               22                     MOV A,R7
+011E F0               23                     MOVX @DPTR,A
+011F 908004           24                     MOV DPTR,#8004H
+0122 EA               25                     MOV A,R2
+0123 F0               26                     MOVX @DPTR,A 
+0124 EF               27                     MOV A,R7
+0125 03               28                     RR A
+0126 FF               29                     MOV R7,A
+0127 314C             30                     ACALL DL1ms
+                      31     
+0129 908002           32                     MOV DPTR,#8002H
+012C EF               33                     MOV A,R7
+012D F0               34                     MOVX @DPTR,A
+012E 908004           35                     MOV DPTR,#8004H
+0131 EB               36                     MOV A,R3
+0132 F0               37                     MOVX @DPTR,A 
+0133 EF               38                     MOV A,R7
+0134 03               39                     RR A
+0135 FF               40                     MOV R7,A
+0136 314C             41                     ACALL DL1ms
+                      42     
+0138 08               43                     INC R0
+0139 B833D1           44                     CJNE R0,#33H,BCD
+013C 020100           45                     LJMP MAIN
+                      46                     
+013F C083             47     CTAB:   PUSH DPH
+0141 C082             48                     PUSH DPL
+0143 900155           49                     MOV DPTR,#TAB
+0146 93               50                     MOVC A,@A+DPTR
+0147 D082             51                     POP DPL
+0149 D083             52                     POP DPH
+014B 22               53                     RET
+                      54             
+014C 7F02             55     DL1ms:  MOV R7,#02H
+014E 7EFF             56     DL:             MOV R6,#0FFH
+0150 DEFE             57     DL6:    DJNZ R6,DL6
+A51 MACRO ASSEMBLER  LEDOUT                                                               12/02/2018 11:41:08 PAGE     2
+
+0152 DFFA             58                     DJNZ R7,DL
+0154 22               59                     RET
+0155 3F065B4F         60     TAB:    DB 3FH,06H,5BH,4FH,66H,6DH,7DH,07H,7FH,6FH,77H,7CH,39H,5FH,79H,71H
+0159 666D7D07                
+015D 7F6F777C                
+0161 395F7971                
+                      61                     END
+A51 MACRO ASSEMBLER  LEDOUT                                                               12/02/2018 11:41:08 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+BCD. . . . . . . .  C ADDR   010DH   A   
+CTAB . . . . . . .  C ADDR   013FH   A   
+DL . . . . . . . .  C ADDR   014EH   A   
+DL1MS. . . . . . .  C ADDR   014CH   A   
+DL6. . . . . . . .  C ADDR   0150H   A   
+DPH. . . . . . . .  D ADDR   0083H   A   
+DPL. . . . . . . .  D ADDR   0082H   A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+TAB. . . . . . . .  C ADDR   0155H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

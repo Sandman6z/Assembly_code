@@ -1,0 +1,101 @@
+A51 MACRO ASSEMBLER  LEDOUT                                                               12/02/2018 16:18:49 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.01
+OBJECT MODULE PLACED IN LEDOUT.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE LEDOUT.ASM SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1             ORG 0000H
+0000 2100              2             AJMP MAIN
+0100                   3             ORG 0100H
+0100                   4     MAIN:
+0100 753030            5         MOV 30H,#30H
+0103 753131            6             MOV 31H,#31H
+0106 753232            7             MOV 32H,#32H
+0109 7830              8             MOV R0,#30H
+010B 7920              9             MOV R1,#20H
+010D                  10     BCD:
+010D E6               11         MOV A,@R0
+010E C4               12             SWAP A
+010F 540F             13             ANL A,#0FH
+0111 313F             14             ACALL CTAB
+0113 FA               15             MOV R2,A
+0114 E6               16             MOV A,@R0
+0115 540F             17             ANL A,#0FH
+0117 313F             18             ACALL CTAB
+0119 FB               19             MOV R3,A
+                      20     
+011A 908002           21             MOV DPTR,#8002H
+011D E9               22             MOV A,R1
+011E F0               23             MOVX @DPTR,A
+011F 908004           24             MOV DPTR,#8004H
+0122 EA               25             MOV A,R2
+0123 F0               26             MOVX @DPTR,A 
+0124 E9               27             MOV A,R1
+0125 03               28             RR A
+0126 F9               29             MOV R1,A
+0127 314C             30             ACALL DL1ms
+                      31     
+0129 908002           32             MOV DPTR,#8002H
+012C E9               33             MOV A,R1
+012D F0               34             MOVX @DPTR,A
+012E 908004           35             MOV DPTR,#8004H
+0131 EB               36             MOV A,R3
+0132 F0               37             MOVX @DPTR,A 
+0133 E9               38             MOV A,R1
+0134 03               39             RR A
+0135 F9               40             MOV R1,A
+0136 314C             41             ACALL DL1ms
+                      42     
+0138 08               43             INC R0
+0139 B833D1           44             CJNE R0,#33H,BCD
+013C 020100           45             LJMP MAIN
+                      46     
+013F                  47     CTAB:
+013F C083             48         PUSH DPH
+0141 C082             49             PUSH DPL
+0143 900155           50             MOV DPTR,#TAB
+0146 93               51             MOVC A,@A+DPTR
+0147 D082             52             POP DPL
+0149 D083             53             POP DPH
+014B 22               54             RET
+                      55     
+                      56     
+014C                  57     DL1ms:
+014C 7E02             58             MOV R6,#02H
+A51 MACRO ASSEMBLER  LEDOUT                                                               12/02/2018 16:18:49 PAGE     2
+
+014E 7DFF             59     DL:             MOV R5,#0FFH
+0150 DDFE             60     LOOP:   DJNZ R5,LOOP
+0152 DEFA             61             DJNZ R6,DL
+0154 22               62                     RET
+0155 3F065B4F         63     TAB:    DB 3FH,06H,5BH,4FH,66H,6DH,7DH,07H,7FH,6FH,77H,7CH,39H,5FH,79H,71H
+0159 666D7D07                
+015D 7F6F777C                
+0161 395F7971                
+                      64             END
+A51 MACRO ASSEMBLER  LEDOUT                                                               12/02/2018 16:18:49 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+BCD. . . . . . . .  C ADDR   010DH   A   
+CTAB . . . . . . .  C ADDR   013FH   A   
+DL . . . . . . . .  C ADDR   014EH   A   
+DL1MS. . . . . . .  C ADDR   014CH   A   
+DPH. . . . . . . .  D ADDR   0083H   A   
+DPL. . . . . . . .  D ADDR   0082H   A   
+LOOP . . . . . . .  C ADDR   0150H   A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+TAB. . . . . . . .  C ADDR   0155H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

@@ -1,0 +1,46 @@
+A51 MACRO ASSEMBLER  1                                                                    11/04/2018 11:04:20 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\1.obj
+ASSEMBLER INVOKED BY: D:\Keil_v5\C51\BIN\A51.EXE 1.asm SET(SMALL) DEBUG PRINT(.\Listings\1.lst) OBJECT(.\Objects\1.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1             ORG 0000H
+0000 020100            2             LJMP MAIN
+0003                   3             ORG 0003H
+0003 02010A            4             LJMP INT
+0100                   5             ORG 0100H
+0100                   6     MAIN:
+0100 C290              7             CLR P1.0
+0102 D288              8             SETB IT0  
+0104 D2A8              9             SETB EX0  
+0106 D2AF             10             SETB EA
+0108 80FE             11             SJMP $
+010A                  12     INT:
+010A C2AF             13             CLR EA
+010C B290             14             CPL P1.0
+010E D2AF             15             SETB EA
+0110 32               16             RETI
+                      17             END
+A51 MACRO ASSEMBLER  1                                                                    11/04/2018 11:04:20 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+EA . . . . . . . .  B ADDR   00A8H.7 A   
+EX0. . . . . . . .  B ADDR   00A8H.0 A   
+INT. . . . . . . .  C ADDR   010AH   A   
+IT0. . . . . . . .  B ADDR   0088H.0 A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

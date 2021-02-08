@@ -1,0 +1,58 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    11/11/2018  13:04:23  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+D:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\interrupt.obj TO .\Objects\count PRINT (.\Listings\count.m51) RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\interrupt.obj (INTERRUPT)
+
+
+LINK MAP OF MODULE:  .\Objects\count (INTERRUPT)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0119H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\count (INTERRUPT)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        INTERRUPT
+  C:0115H         SYMBOL        CON
+  B:00A8H.7       SYMBOL        EA
+  B:00A8H.3       SYMBOL        ET1
+  C:0100H         SYMBOL        MAIN
+  D:0090H         SYMBOL        P1
+  D:008DH         SYMBOL        TH1
+  D:008BH         SYMBOL        TL1
+  D:0089H         SYMBOL        TMOD
+  B:0088H.6       SYMBOL        TR1
+  C:0000H         LINE#         3
+  C:001BH         LINE#         5
+  C:0100H         LINE#         7
+  C:0102H         LINE#         8
+  C:0104H         LINE#         9
+  C:0107H         LINE#         10
+  C:010AH         LINE#         11
+  C:010DH         LINE#         12
+  C:010FH         LINE#         13
+  C:0111H         LINE#         14
+  C:0113H         LINE#         15
+  C:0115H         LINE#         16
+  C:0116H         LINE#         17
+  C:0118H         LINE#         18
+  -------         ENDMOD        INTERRUPT
+
+Program Size: data=8.0 xdata=0 code=281
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

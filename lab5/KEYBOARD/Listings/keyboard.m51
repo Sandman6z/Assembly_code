@@ -1,0 +1,131 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    11/25/2018  12:16:09  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+D:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\KEYBOARD.obj TO .\Objects\keyboard PRINT (.\Listings\keyboard.m51) RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\KEYBOARD.obj (KEYBOARD)
+
+
+LINK MAP OF MODULE:  .\Objects\keyboard (KEYBOARD)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     1096H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\keyboard (KEYBOARD)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        KEYBOARD
+  D:00E0H         SYMBOL        ACC
+  C:1075H         SYMBOL        DELAY
+  C:1004H         SYMBOL        KEY1
+  C:1040H         SYMBOL        KEY10
+  C:1041H         SYMBOL        KEY11
+  C:1049H         SYMBOL        KEY12
+  C:1052H         SYMBOL        KEY13
+  C:1054H         SYMBOL        KEY14
+  C:1062H         SYMBOL        KEY15
+  C:1067H         SYMBOL        KEY16
+  C:1008H         SYMBOL        KEY2
+  C:100CH         SYMBOL        KEY3
+  C:1018H         SYMBOL        KEY4
+  C:101CH         SYMBOL        KEY5
+  C:102CH         SYMBOL        KEY6
+  C:1033H         SYMBOL        KEY7
+  C:103AH         SYMBOL        KEY8
+  C:103FH         SYMBOL        KEY9
+  C:1077H         SYMBOL        LOOP
+  C:1000H         SYMBOL        START
+  C:107EH         SYMBOL        TABLE
+  C:0000H         LINE#         2
+  C:1000H         LINE#         5
+  C:1002H         LINE#         6
+  C:1004H         LINE#         8
+  C:1006H         LINE#         9
+  C:1008H         LINE#         10
+  C:100AH         LINE#         11
+  C:100CH         LINE#         12
+  C:100EH         LINE#         13
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  11/25/2018  12:16:09  PAGE 2
+
+
+  C:1010H         LINE#         14
+  C:1012H         LINE#         15
+  C:1014H         LINE#         16
+  C:1016H         LINE#         17
+  C:1018H         LINE#         18
+  C:101AH         LINE#         19
+  C:101CH         LINE#         20
+  C:101FH         LINE#         21
+  C:1020H         LINE#         22
+  C:1021H         LINE#         23
+  C:1024H         LINE#         24
+  C:1025H         LINE#         25
+  C:1028H         LINE#         26
+  C:102AH         LINE#         27
+  C:102CH         LINE#         28
+  C:102FH         LINE#         29
+  C:1031H         LINE#         30
+  C:1033H         LINE#         31
+  C:1036H         LINE#         32
+  C:1038H         LINE#         33
+  C:103AH         LINE#         34
+  C:103DH         LINE#         35
+  C:103FH         LINE#         36
+  C:1040H         LINE#         37
+  C:1041H         LINE#         38
+  C:1043H         LINE#         39
+  C:1045H         LINE#         40
+  C:1046H         LINE#         41
+  C:1048H         LINE#         42
+  C:1049H         LINE#         43
+  C:104AH         LINE#         44
+  C:104BH         LINE#         45
+  C:104EH         LINE#         46
+  C:104FH         LINE#         47
+  C:1050H         LINE#         48
+  C:1052H         LINE#         49
+  C:1054H         LINE#         50
+  C:1057H         LINE#         51
+  C:1059H         LINE#         52
+  C:105AH         LINE#         53
+  C:105DH         LINE#         54
+  C:105EH         LINE#         55
+  C:105FH         LINE#         56
+  C:1061H         LINE#         57
+  C:1062H         LINE#         58
+  C:1065H         LINE#         59
+  C:1066H         LINE#         60
+  C:1067H         LINE#         61
+  C:106AH         LINE#         62
+  C:106CH         LINE#         63
+  C:106DH         LINE#         64
+  C:1070H         LINE#         65
+  C:1071H         LINE#         66
+  C:1072H         LINE#         67
+  C:1074H         LINE#         68
+  C:1075H         LINE#         70
+  C:1077H         LINE#         72
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  11/25/2018  12:16:09  PAGE 3
+
+
+  C:1079H         LINE#         73
+  C:107BH         LINE#         74
+  C:107DH         LINE#         75
+  -------         ENDMOD        KEYBOARD
+
+Program Size: data=8.0 xdata=0 code=4246
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

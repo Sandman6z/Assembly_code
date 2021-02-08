@@ -1,0 +1,56 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    12/09/2018  13:09:06  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+D:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\light_water.obj TO .\Objects\water PRINT (.\Listings\water.m51) RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\light_water.obj (LIGHT_WATER)
+
+
+LINK MAP OF MODULE:  .\Objects\water (LIGHT_WATER)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     011BH     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\water (LIGHT_WATER)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        LIGHT_WATER
+  C:010EH         SYMBOL        DEL
+  C:0110H         SYMBOL        DEL1
+  C:0116H         SYMBOL        DEL2
+  C:0100H         SYMBOL        MAIN
+  D:00A0H         SYMBOL        P2
+  C:0102H         SYMBOL        SUB1
+  C:0000H         LINE#         2
+  C:0100H         LINE#         4
+  C:0102H         LINE#         5
+  C:0104H         LINE#         6
+  C:0106H         LINE#         7
+  C:0109H         LINE#         8
+  C:010BH         LINE#         9
+  C:010CH         LINE#         10
+  C:010EH         LINE#         12
+  C:0110H         LINE#         13
+  C:0112H         LINE#         14
+  C:0114H         LINE#         15
+  C:0116H         LINE#         16
+  C:0118H         LINE#         17
+  C:011AH         LINE#         18
+  -------         ENDMOD        LIGHT_WATER
+
+Program Size: data=8.0 xdata=0 code=283
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
